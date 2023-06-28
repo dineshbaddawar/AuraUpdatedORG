@@ -1,0 +1,52 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="AuraUtilityClass" >
+    <aura:handler name ="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="conList" type="List"/>
+    <aura:attribute name="accId" type="String"/>
+    
+    <lightning:card title="Custom Data Table" iconName="utility:table" class="slds-p-around_medium">
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset slds-text-title_caps">
+                    <th  class="slds-is-resizable" scope="col">
+                        <div class="slds-truncate" title="Name">
+                            Name
+                        </div>
+                    </th>
+                     <th  class="slds-is-resizable" scope="col">
+                        <div class="slds-truncate" title="Account Name">
+                           Account Name
+                        </div>
+                    </th>
+                     
+                    <th  class="slds-is-resizable" scope="col">
+                        <div class="slds-truncate" title="Email">
+                            Email
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <aura:iteration items="{!v.conList}" var = "acc">
+                    <tr class="slds-hint-parent">
+                        <th scope="row">
+                            <div class="slds-truncate" title="{!acc.Name}">
+                                <a target="_blank" href="{!'/'+acc.Id}">{!acc.Name}</a> 
+                            </div>
+                        </th>
+                         <th scope="row">
+                            <div class="slds-truncate" title="{!acc.Account.Name}">
+                                <a target="_blank" href="{!'/'+acc.Account}">{!acc.Account.Name}</a> 
+                            </div>
+                        </th>
+                         
+                         <th  scope="row">
+                             <div class="slds-truncate" title="{!acc.Email}">{!acc.Email}</div>
+                        </th>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+       
+        </table>
+    </lightning:card>
+</aura:component>

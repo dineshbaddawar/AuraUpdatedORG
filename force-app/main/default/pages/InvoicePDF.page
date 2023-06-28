@@ -1,0 +1,146 @@
+<apex:page renderAs="pdf" showHeader="false" standardController="Opportunity" extensions="InvoicePDFController" title="Invoice PDF">
+    <!-- renderAs="pdf" -->
+    <apex:stylesheet value="{!$Resource.PDF}"/>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine" />
+        <style type="text/css">
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <div class="header" >
+            <apex:image value="{!$Resource.Quizziz_logo}" style="float:left;height:40px;" />
+        </div>
+        
+        
+        
+        <div class="content">
+            
+            <table class='quotation-table'>
+                <tbody>
+                    <tr>
+                        <td colspan="3"><center><strong class='header-text'>Quotation 1</strong></center></td>
+                    </tr>
+                    <tr>
+                        <td class="organization-details">
+                            <div >
+                                <div ><p class='organization'><strong>Quizizz Inc 6 Pvt Ltd.</strong></p></div>
+                                <div >
+                                    DEPT LA 22192, PASADENA 
+                                    CA 91185 - 2192 
+                                    <br/>
+                                </div>
+                            </div>
+                        </td>
+                        
+                        <td style="margin-left:20px;">
+                            hi
+                        </td>
+                    </tr>
+                    
+                    <tr class='to-address'>
+                        <td >
+                            <div >
+                                Bill To,
+                            </div>
+                            <div>
+                                <strong>{!oppDetails.Account.Name}</strong>
+                                <address>
+                                    {!oppDetails.Account.BillingStreet}
+                                    {!oppDetails.Account.BillingCity}
+                                    {!oppDetails.Account.BillingState}
+                                </address>
+                            </div>
+                        </td>
+                        <td colspan="2">
+                            <div >
+                                Ship to,
+                            </div>
+                            <div>
+                                <strong>{!oppDetails.Account.Name}</strong>
+                                <address>
+                                    {!oppDetails.Account.ShippingStreet}
+                                    {!oppDetails.Account.ShippingCity}
+                                    {!oppDetails.Account.ShippingState}
+                                    
+                                </address>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            <table class='Quote-items'>
+                <tr class='quote-header'>
+                    <th>S.No.</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Qty</th>
+                    <th>Unit Rate(INR)</th>
+                    <th>Amount</th>
+                    <th>Amount in Words</th>
+                </tr>
+                <apex:variable var="index" value="{!0}" />
+                <apex:repeat value="{!oppProductList}" var="lineItems">
+                    <tr class='item-details'>
+                        <apex:variable var="index" value="{!(index+1)}"/>
+                        <td><apex:outputText value="{!index}" id="theValue"/> </td>
+                        <td style="text-align:center">{!lineItems.Description}</td>
+                        <td style="text-align:center">
+                            <apex:outputText value="{0,date,dd/MM/YY}"> <apex:param value="{!lineItems.ServiceDate}" /> </apex:outputText>
+                            
+                        </td>
+                        <td style="text-align:center">{!lineItems.Quantity}</td>
+                        <td style="text-align:right">{!lineItems.UnitPrice}</td>
+                        <td style="text-align:right">{!lineItems.TotalPrice}</td>
+                        <td style="text-align:right"></td>
+                    </tr>
+                    
+                </apex:repeat>
+                
+                <tr class='item-details'><td colspan="7">&nbsp;</td></tr>
+                <tr></tr>
+                <tr class='item-details'>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Total </th>
+                    <th>{!oppDetails.Amount} </th>
+                    <th style="text-align:left;font-size:12px;">{!AmountInWords}</th>
+                    
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Amount Paid </th>
+                    <th>{!padiAmountInvoice}</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th>Amount Due </th>
+                    <th>{!dueAmount}</th>
+                    <th></th>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+            
+        </div>
+        <div class="footer">
+            <hr style="background:blue;height:5px;" />
+            
+            <div class="number">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+            <br/>
+        </div>
+    </body>
+</apex:page>

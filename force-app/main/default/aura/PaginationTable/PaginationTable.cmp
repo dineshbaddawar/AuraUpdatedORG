@@ -1,0 +1,46 @@
+<aura:component controller="TestCode" implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="accList" type="Account[]"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="pageNumber" type="Integer" default="1"/>
+    <aura:attribute name="pageSize" type="Integer" default="10"/>
+    <aura:attribute name="isLastPage" type="Boolean" default="false"/>
+    <aura:attribute name="dataSize" type="Integer" default="0"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <lightning:spinner alternativeText="Loading" />
+    </aura:if>
+    <lightning:card title="Account Pagination Table" iconName="standard:account" class="slds-p-around_small">
+        <div class="slds-p-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-start">
+            <div id="stats">
+                <span class="slds-text-heading_small">
+                    Page {!v.pageNumber} | Showing records from {! ((v.pageNumber-1)*v.pageSize)+' to '+((v.pageNumber-1)*v.pageSize+v.dataSize)}
+                </span>
+            </div>
+            <div class="inline-container">
+                <lightning:button variant="brand" label="Prev" iconName="utility:chevronleft" iconPosition="left" onclick="{!c.handlePrev}" disabled="{! v.pageNumber == 1}"/>
+                <lightning:button variant="brand" label="Next" iconName="utility:chevronright" iconPosition="right" onclick="{!c.handleNext}" disabled="{! v.isLastPage}"/>
+            </div>
+        </div>
+
+        <table class="slds-table slds-table_cell-buffer slds-mt-around_medium slds-table_bordered">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col"><div class="slds-truncate" >Sr.No</div></th>
+                    <th scope="col"><div class="slds-truncate" >Name</div></th>
+                    <th scope="col"><div class="slds-truncate" >Email</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.accList}" var="acc" indexVar="i">
+                    <tr>
+                         <td scope="row">{!i+1}</td>
+                        <td scope="row">{!acc.Name}</td>
+                        <td scope="row">{!acc.Email__c}</td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        </lightning:card>
+</aura:component>

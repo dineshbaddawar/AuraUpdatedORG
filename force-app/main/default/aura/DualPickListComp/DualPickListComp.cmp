@@ -1,0 +1,42 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" Controller="AuraUtilityClass" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="OppList" type="List"/>
+    <aura:attribute name="TypePick" type="List"/>
+    <aura:attribute name="StagePick" type="List"/>
+    <aura:attribute name="isOpenQuickAction" type="Boolean" default="false"/>
+    <aura:attribute name="selStageType" type="String"/>
+    <aura:attribute name="selTypeValue" type="String"/>
+      
+    
+     <div class="slds-p-around_large slds-section">
+         
+         <header class="slds-modal__header">
+             <h1><b>Update Stage And Type</b></h1> 
+         </header>
+         
+         <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+             <lightning:select aura:id="oppType" label="Select Type" onchange="{!c.onChangeeFiledValue}">
+                 <option value="">--None---</option>
+                 <aura:iteration items="{!v.TypePick}" var="item">
+                     <option value="{!item}">{!item}</option>
+                 </aura:iteration>
+             </lightning:select>
+             <br/>
+             <lightning:select aura:id="oppStage" label="Select Stage" onchange="{!c.onChangeeFiledValue}">
+                 <option value="">--None---</option>
+                 <aura:iteration items="{!v.StagePick}" var="item">
+                     <option value="{!item}">{!item}</option>
+                 </aura:iteration>
+             </lightning:select>
+         </div>
+         
+         <div>
+             <footer class="slds-modal__footer">
+                 <lightning:button variant="neutral" class="slds-float_center" label="Cancel" title="Cancel" onclick="{! c.closeModel }"/>
+                 <lightning:button variant="brand" class="slds-float_center" label="Submit"  onclick="{!c.updateOppField}"/>
+             </footer>
+         </div>
+     
+     </div>
+ 
+</aura:component>

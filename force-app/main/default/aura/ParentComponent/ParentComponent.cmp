@@ -1,0 +1,5 @@
+<!-- Parent to Child Communication 1 -->
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+    <c:ChildComponent aura:id="compB"/>
+    <lightning:button variant="brand" label="Call child method" onclick="{! c.onAction}" />
+</aura:component>

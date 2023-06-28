@@ -1,0 +1,14 @@
+<template>
+     <lightning-quick-action-panel header="Crete Zoom Meeting" style="background-color:aquamarine;">
+         <div class="row">
+       <lightning-input type="text" label="Meeting Name" value={meetingSubject}  onchange={handleChangeSubject} ></lightning-input>
+       <lightning-input type="datetime" label="Meeting DateTime" value={meetingdatetime} onchange={handleChangeDatetime}> </lightning-input>
+       <lightning-input type="number" label="Duration" value={meetingtime} onchange={handleChangeDuration}></lightning-input>
+    </div>
+    <br/>
+  <footer class="slds-modal__footer">
+    <button class="slds-button slds-button_neutral slds-float_left" onclick={handleCancel}>Cancel </button>
+    <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+</footer>
+     </lightning-quick-action-panel>
+ </template>

@@ -1,0 +1,10 @@
+<aura:component controller="AuraUtilityClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="reportCount" type="Integer"/>
+    <aura:attribute name="reportApiNameFromPage" type="String"/>
+    <lightning:card title="Report Count From Aura" iconName="standard:report">
+    <div class="slds-p-around_small">
+        Report Count: <b>{!v.reportCount}</b> 
+        </div>
+    </lightning:card>
+</aura:component>

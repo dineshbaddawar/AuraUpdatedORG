@@ -1,0 +1,36 @@
+<template>
+ 
+      <lightning-card class="slds-p-around_small">
+        <lightning-input label="Search Contact" class="slds-text-title--caps" placeholder="enter text.." type="search" onchange={handleChange}></lightning-input>
+
+      <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+       <thead>
+           <tr class="slds-line-height_reset">
+               
+               <th class="" scope="col">
+                   <div class="slds-truncate" title="Name">Name</div>
+               </th>
+               <th class="" scope="col">
+                 <div class="slds-truncate" title="Name">Email</div>
+             </th>
+           </tr>
+       </thead>
+       <tbody>
+           <template for:each={dataList} for:item="con"> 
+               <tr key={con.Id}>
+                 <th scope="col">
+                   <div class="slds-text-link_reset" data-id={con.Id} onclick={redirecttoaccount}>
+                    {con.Name}
+                   </div>
+               </th>
+                   <th scope="col">
+                       <div>
+                           <lightning-formatted-email value={con.Email}></lightning-formatted-email>
+                       </div>
+                   </th>
+               </tr>
+           </template>
+       </tbody>
+   </table>
+      </lightning-card>
+</template>

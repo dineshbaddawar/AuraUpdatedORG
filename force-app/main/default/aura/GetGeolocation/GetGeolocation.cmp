@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="Getgeolocation" >
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="lattituede" type="String"/>
+    <aura:attribute name="longitutde" type="String"/>
+    <aura:attribute name="address" type="String"/>
+    <lightning:card title="Geolocation">
+    
+        <lightning:input type="text" label="Lattituede" name="lattituede" value="{!v.lattituede}" />
+        <lightning:input type="tex" label="Longitutde" name="longitutde" value="{!v.longitutde}" />
+          <lightning:button variant="brand" label="Get Geolocation"  onclick="{! c.handleClick }" />
+    </lightning:card>
+</aura:component>

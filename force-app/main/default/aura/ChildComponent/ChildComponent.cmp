@@ -1,0 +1,10 @@
+<!-- Parent to Child Communication 2 -->
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:method name="sampleMethod" action="{!c.doAction}"> 
+        <aura:attribute name="param1" type="String" default="Data from Parent"/> 
+        <aura:attribute name="param2" type="Object" /> 
+        <aura:attribute name="IdFromParent" type="String"/>
+    </aura:method>
+    
+  
+</aura:component>

@@ -1,0 +1,26 @@
+<template>
+     <lightning-card>
+             <lightning-quick-action-panel header="Quick Action">
+               <label class="slds-form-element__label">Lead Source</label>
+               <div slot="header" class="slds-align_absolute-center slds-m-top_x-small">
+                
+               </div>
+               <div class="slds-form-element__control">
+                 <div class="slds-select_container">
+                   <select class="slds-select" onchange={selectOptionChanveValue}>
+                         <option value="">---None---</option>                
+                           <template for:each={selectTargetValues.data} for:item="selectOptItem">
+                              <option key={selectOptItem.custFldvalue} value={selectOptItem.custFldvalue}>
+                                {selectOptItem.custFldlabel}
+                              </option>
+                         </template>
+                   </select>
+                 </div>
+               </div> <br/>
+               <div slot="footer" class="slds-align_absolute-center slds-m-top_x-small">
+                    <lightning-button onclick={cancel} variant="neutral" label="Cancel"></lightning-button>
+                    <lightning-button onclick={handleLoad} variant="brand" label="Save" class="slds-m-left_x-small"></lightning-button>
+                </div>
+              </lightning-quick-action-panel>
+     </lightning-card>
+</template>

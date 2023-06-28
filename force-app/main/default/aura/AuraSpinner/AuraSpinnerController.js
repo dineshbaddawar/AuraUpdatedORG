@@ -1,0 +1,21 @@
+({
+    getAccounts : function(component, event, helper) {
+        debugger;
+        //call getAccountsHelper method
+        helper.getAccountsHelper(component, event, helper);
+    },
+     
+    // function automatic called by aura:waiting event  
+    showSpinner: function(component, event, helper) {
+        debugger;
+        // make Spinner attribute true for displaying loading spinner 
+        component.set("v.spinner", true); 
+    },
+     
+    // function automatic called by aura:doneWaiting event 
+    hideSpinner : function(component,event,helper){
+        debugger;
+        // make Spinner attribute to false for hiding loading spinner    
+        component.set("v.spinner", false);
+    }
+})

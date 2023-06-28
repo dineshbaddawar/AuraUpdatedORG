@@ -1,0 +1,24 @@
+<aura:component controller="AuraUtilityClass" implements="force:lightningQuickAction,force:hasRecordId,flexipage:availableForRecordHome">
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+<!-- <aura:attribute name="invList" type="List" /> -->
+<aura:attribute name="results" type="Invoice__c[]"/>
+<aura:attribute name="columns" type="List"/>
+<aura:attribute name="sortedBy" type="String" default="Name"/>
+<aura:attribute name="sortedDirection" type="string" default="asc" />
+
+<lightning:card title="Invoice List" class="slds-p-around_small">
+     <lightning:layout multipleRows="true" horizontalAlign="center">
+          <lightning:layoutItem padding="around-small" size="12">
+     <lightning:datatable aura:id="accdt"
+                          columns="{!v.columns}" 
+                          data="{!v.results}" 
+                          keyField="Id"
+                          resizeColumnDisabled="true"
+                          onsort="{!c.sortColumn}"
+                          sortedBy="{!v.sortedBy}"
+                          sortedDirection="{!v.sortedDirection}"
+                          />
+                         </lightning:layoutItem>
+                         </lightning:layout>
+</lightning:card>
+</aura:component>

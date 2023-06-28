@@ -1,0 +1,13 @@
+<aura:component controller="AuraUtilityClass" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="leadRecord" type="Lead"/>
+     <div class="Record Details">
+        <lightning:card iconName="action:edit" title="Edit Account">
+            <div class="slds-p-horizontal--small">
+               <lightning:input label="FirstName" value="{!v.leadRecord.FirstName}"/>
+               <br/>
+              <lightning:input label="LastName" value="{!v.leadRecord.LastName}"/>    
+            </div>
+        </lightning:card>
+    </div>
+</aura:component>

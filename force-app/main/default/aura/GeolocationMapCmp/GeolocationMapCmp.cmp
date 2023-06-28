@@ -1,0 +1,12 @@
+<aura:component controller = "GeoLocationMapCmpController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="mapMarkers" type="Object" access="PRIVATE" />
+    <aura:attribute name="markersTitle" type="String" access="PRIVATE" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!!empty(v.mapMarkers)}">
+        <lightning:map
+                       mapMarkers="{!v.mapMarkers }"         
+                       markersTitle ="{!v.markersTitle}"
+                       zoomLevel="10" />
+    </aura:if>
+</aura:component>

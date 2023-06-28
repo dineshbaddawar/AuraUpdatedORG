@@ -1,0 +1,28 @@
+.THIS {
+    box-sizing: border-box;
+}
+.THIS .body {
+    margin: 0;
+    font-family: Arial;
+} 
+
+.THIS .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+.THIS .column img {
+      opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.THIS .column img:hover {
+    opacity: 1;
+}
+
+.THIS .row:after {
+     content: "";
+  display: table;
+  clear: both;
+}

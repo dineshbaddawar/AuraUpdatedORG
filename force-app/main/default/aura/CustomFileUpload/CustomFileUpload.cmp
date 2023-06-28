@@ -1,0 +1,14 @@
+<aura:component controller="AuraUtilityClass" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+  
+    <aura:attribute name="fileName" type="String" default="No File Selected..."/>
+    
+    <lightning:card title="Custom File upload Using Aura" iconName="utility:upload" class="slds-p-around_small">
+    <lightning:input aura:id="fileuplod" onchange="{!c.handleFilesChange}" type="file" label="Upload File" multiple="false"/>
+    <div class="slds-text-body_small slds-text-color_success">
+    {!v.fileName}
+    </div>  
+    <br/>
+    <lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-top--medium"/>
+    <lightning:button label="Save" onclick="{!c.handleSave}" variant="success" class="slds-m-top_medium"/>
+        </lightning:card>
+</aura:component>

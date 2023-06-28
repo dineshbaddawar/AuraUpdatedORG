@@ -1,0 +1,4 @@
+<aura:component Controller="VeriPhoneController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="phoneValue" type="String"/>
+</aura:component>

@@ -1,0 +1,113 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global" controller="GlobalSobjectController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="allObjects" type="List" />
+    <aura:attribute name="filteredObjects" type="List" />
+    <aura:attribute name="records" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="showDetails" type="boolean" default="false" />
+    <aura:attribute name="selectedObject" type="String"/>
+    <aura:attribute name="selectedRecord" type="String"/>
+    <aura:attribute name="recordFormMode" type="String" default="readonly"/>
+    <aura:attribute name="recordFound" type="boolean" default="false"/>
+    
+    <!-- Layout #1 -->
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="12" mediumDeviceSize="12" padding="around-small">
+            
+            <lightning:card title="SELECT OBJECTS" class="layoutcolor">
+                <lightning:layout multipleRows="true">
+                    
+                    <!-- for Selecting Obeject Type -->
+                    <lightning:layoutItem size="6" mediumDeviceSize="3" padding="around-small">
+                        <lightning:select aura:id="typeList" name="types" class="textfont" label="SELECT OBJECT TYPE" 
+                                          onchange="{!c.onTypeChange}">
+                            <option value="">--None--</option>
+                            <aura:iteration items="Standard Objects,Custom Objects,All Objects" var="item">
+                                <option value="{!item}">{!item}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    <!-- For Selecting Objects -->
+                    <lightning:layoutItem size="6" mediumDeviceSize="3" padding="around-small">
+                        <lightning:select aura:id="objectList" class="textfont" name="objects" label="SELECT OBJECT" 
+                                          onchange="{!c.onObjectSelectionChange}">
+                            <option value="">--None--</option>
+                            <aura:iteration items="{!v.filteredObjects}" var="item">
+                                <option value="{!item.objectName}">{!item.objectLabel}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    
+                    
+                    
+                    
+                    <!-- Select read or Edit mode -->
+                    <lightning:layoutItem size="6" mediumDeviceSize="3" padding="around-small">
+                        <lightning:select aura:id="modeList" name="modes" class="textfont" label="SELECT RECORD MODE" 
+                                          onchange="{!c.onModeChange}">
+                             <option value="">--None--</option>
+                            <aura:iteration items="ReadOnly Mode,View/Edit Mode" var="item">
+                                <option value="{!item}">{!item}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    
+                    
+                    
+                </lightning:layout>
+            </lightning:card>
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+    
+    <!-- Layout #2 -->
+    <lightning:layout multipleRows="true">
+        
+        <!-- Data table section to display records -->
+        
+        <aura:if isTrue="{!v.recordFound}">
+            <lightning:layoutItem size="3" mediumDeviceSize="3" padding="around-small">
+                <lightning:card title="SELECTED OBJECTS RECORD" class="recordfont">
+                    <lightning:layout multipleRows="true">
+                        <lightning:layoutItem size="12" padding="around-small">
+                            <lightning:datatable class="recordfont"
+                                                 columns="{! v.columns }"
+                                                 data="{! v.records }"
+                                                 keyField="id"
+                                                 hideCheckboxColumn="true"
+                                                 onrowaction="{! c.handleRowAction }" />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </lightning:card>
+            </lightning:layoutItem>
+            
+            <!-- for view and Edit Record -->
+            <lightning:layoutItem size="9" mediumDeviceSize="9" padding="around-small">
+                <lightning:card title="View Or Edit Record" class="recordview">
+                    <lightning:layout multipleRows="true">
+                        <lightning:layoutItem size="12" padding="around-medium">
+                            <aura:if isTrue="{!v.showDetails}">
+                                <lightning:recordForm
+                                                      recordId="{!v.selectedRecord}" 
+                                                      objectApiName="{!v.selectedObject}"
+                                                      layoutType="Full"
+                                                      columns="2"
+                                                      mode="{!v.recordFormMode}" />
+                            </aura:if>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </lightning:card>
+            </lightning:layoutItem>
+            <aura:set attribute="else">
+                
+                <lightning:layoutItem size="3" mediumDeviceSize="3" padding="around-small">
+                    <lightning:card  class="recordfont">
+                        <p class="slds-text-title--caps slds-p-around_small"> <b style="color:red;">No Record Founds !</b></p> 
+                    </lightning:card>
+                </lightning:layoutItem>
+            </aura:set>
+            
+        </aura:if> 
+        
+    </lightning:layout>
+</aura:component>

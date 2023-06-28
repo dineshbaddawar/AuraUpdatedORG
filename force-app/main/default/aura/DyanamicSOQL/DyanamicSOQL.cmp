@@ -1,0 +1,62 @@
+<aura:component controller="AuraUtilityClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="ObjetList" type="List"/>
+    <aura:attribute name="sobjectFieldList" type="List"/>
+    <aura:attribute name="selObjectType" type="String"/>
+    <aura:attribute name="selectedLeadTypeList" type="List"/>
+    <aura:attribute name="fieldListType" type="List"/>
+    <aura:attribute name="currentSelectedFiedl" type="String"/>
+    <aura:attribute name="ListOfFieldList" type="List" default="[]"/>
+    <aura:attribute name="LeadTypeList" type="List" default="[]"/>
+    
+    <lightning:card class="slds-p-around_small">
+        <div class="row">
+            <tr>
+                <td class="slds-p-around_small">
+                    <lightning:select aura:id="objecttype" name="select" label="Select Object" onchange="{!c.onChange}">
+                        <option value="">choose one...</option>
+                        <aura:iteration items="{!v.ObjetList}" var="item">
+                            <option value="{!item}">{!item}</option>
+                        </aura:iteration>
+                    </lightning:select> 
+                </td>
+                
+                <!--td class="slds-p-around_small">
+                    <lightning:select aura:id="fieldtype" name="select" label="Select Field" onchange="{!c.fieldonChange}">
+                        <option value="">choose one...</option>
+                        <aura:iteration items="{!v.sobjectFieldList}" var="item">
+                            <option value="{!item}">{!item}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </td-->
+                
+                <td>
+                    
+                    <div calss="slds-m-around_xx-large">
+                        <lightning:dualListbox aura:id="selectLeadType"
+                                               name="LeadType"
+                                               label="Select LeadType1"
+                                               sourceLabel="Available LeadType"
+                                               selectedLabel="Selected LeadType2"
+                                               options="{!v.ListOfFieldList}"
+                                               value="{!v.selectedLeadTypeList}"
+                                               onchange="{!c.handleLeadTypeChange}"/>
+                        <lightning:button variant="brand" label="Get Selected LeadType" onclick="{!c.getSelectedLeadType}"/>
+                    </div>
+                </td>
+                
+                <td class="slds-p-around_small">
+                    <lightning:button variant="brand" label="ADD" title="Brand action" onclick="{! c.addhandleClick }" />
+                </td>
+                
+                <td>
+                    <lightning:textarea name="input1" style="height: 34px;width: 20rem;" label="Selected Fields" value="{!v.fieldListType}"  />
+                </td>
+            </tr>
+            
+            
+            
+        </div>
+        
+    </lightning:card>
+</aura:component>

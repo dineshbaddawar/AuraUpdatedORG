@@ -1,0 +1,46 @@
+<aura:component controller="TestCode" implements="flexipage:availableForAllPageTypes" access="global">
+     <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+     <aura:attribute name="sObjectName" type="String" default="Account"/>
+     <aura:attribute name="sObjectFieldsNames" type="List" default="Name,Type,Industry,AccountNumber,CreatedDate"/>	
+     <aura:attribute name="data" type="Object"/>
+     <aura:attribute name="columns" type="List"/>    
+     <aura:attribute name="allData" type="List" />
+     <aura:attribute name="filteredData" type="List" />
+     <aura:attribute name="pageSize" type="Integer" default="10" />
+     <aura:attribute name="pageSizeOptions" type="Integer[]" default="10,15,20,25,50,100" />
+     <aura:attribute name="currentPageNumber" type="Integer" default="1" />
+     <aura:attribute name="totalPages" type="Integer" default="1" />
+     <aura:attribute name="searchPhrase" type="String" />
+     <aura:html tag="style">
+         .slds-form-element__label{
+         display:none !important;
+         }
+     </aura:html>
+     <lightning:card title="Client Side Pagination Table" iconName="utility:table">
+         <div class="slds-p-around_small slds-grid slds-grid_align-spread slds-grid_vertical-align-start">
+             <div>
+                 <lightning:select label="" value="{! v.pageSize }" onchange="{!c.onPageSizeChange}">
+                     <aura:iteration items="{!v.pageSizeOptions}" var="opt">
+                         <option text="{!opt}"></option>
+                     </aura:iteration>
+                 </lightning:select>
+             </div>
+             <div>
+                 <lightning:button label="First" iconName="utility:left" iconPosition="left" onclick="{! c.onFirst }" disabled="{! v.currentPageNumber == 1 }" />
+                 <lightning:button label="Previous" iconName="utility:chevronleft" iconPosition="left" onclick="{! c.onPrev }" disabled="{! v.currentPageNumber == 1 }" />
+                 <span class="slds-var-p-horizontal_x-small"> Page {! (v.currentPageNumber) } of {! (v.totalPages) } </span>                
+                 <lightning:button label="Next" iconName="utility:chevronright" iconPosition="right" onclick="{! c.onNext }" disabled="{! v.currentPageNumber == v.totalPages }"/>
+                 <lightning:button label="Last" iconName="utility:right" iconPosition="right" onclick="{! c.onLast }" disabled="{! v.currentPageNumber == v.totalPages }" />
+             </div>
+             <div class="inline-container">
+                 <span class="padding-right">
+                     <lightning:input onkeyup="{! c.handleSearch }" variant="label-hidden" placeholder="Search Phrase" type="search" value="{! v.searchPhrase }" onchange="{! c.onChangeSearchPhrase }" />
+                 </span>
+             </div>
+         </div>         
+     </lightning:card> 
+     <lightning:datatable data="{! v.data }" 
+                          columns="{! v.columns }" 
+                          keyField="id" 
+                          hideCheckboxColumn="true"/>
+</aura:component>

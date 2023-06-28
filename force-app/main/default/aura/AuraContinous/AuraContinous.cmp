@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" controller="ContinuationSampleController">
+    <aura:attribute name="siteURL" type="String" />
+	
+ 
+    <lightning:button variant="brand" class="slds-m-around_small" label="SAVE PDF" iconName="utility:download"  onclick="{!c.callContinuation}"/>
+</aura:component>

@@ -1,0 +1,52 @@
+<!-- /**
+ * @author [Dinesh Baddawar]
+ * @email dinesh.b@utilitarianLab.com
+ * @create date 2023-05-31 13:40:03
+ * @modify date 2023-05-31 13:40:03
+ * @desc [description]
+ */ -->
+
+<aura:component controller="AuraUtilityClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="fileName" type="String" default="No File Selected..."/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="docTempId" type="String"/>
+    
+     <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="spinner" type="boolean" default="FALSE"/>
+    
+    <lightning:notificationsLibrary aura:id="notifLib" />
+    <aura:import library="lightning:alert" property="LightningAlert" />
+    
+    
+     
+    <aura:if isTrue="{!v.spinner}">
+        <div aura:id="spinnerId" class="slds-spinner_container">
+            <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                <span class="slds-assistive-text">Loading...</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+    </aura:if>
+    
+    <center>
+        
+        <div class="slds-form-element slds-p-around_small" style="font-family: Noto Sans,Helvetica,sans-serif;font-size: medium;background: lightcyan;">
+            <div class="slds-form-element__control">
+                <div class="slds-file-selector__dropzone slds-has-drag-over">
+                    <div class="slds-file-selector__dropzone" style="font-family: Noto Sans,Helvetica,sans-serif;font-size: medium;">
+                        <lightning:input aura:id="fileuplod" onchange="{!c.handleFilesChange}" type="file" label="Upload File" multiple="false"/>
+                        <div class="slds-text-body_small slds-text-color_success" style="font-family: Noto Sans,Helvetica;">
+                            {!v.fileName}
+                        </div>  
+                        <br/>
+                        <lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-top--medium"/>
+                        <lightning:button label="Save" onclick="{!c.handleSave}" variant="brand" class="slds-m-top_medium"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</aura:component>

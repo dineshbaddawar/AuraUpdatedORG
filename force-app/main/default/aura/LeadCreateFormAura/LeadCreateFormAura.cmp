@@ -1,0 +1,30 @@
+<aura:component controller="AuraUtilityClass"  implements="flexipage:availableForAllPageTypes,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.onPageReferenceChange}"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.onPageReferenceChange}" />
+    <aura:attribute name="ledRecord" type="Lead"/>
+    <aura:attribute name="pickValues" type="List"/>
+    <aura:attribute name="pickValue" type="String"/>  
+    <aura:attribute name="CreatedleadId"  type="String"/>
+    
+    <div class="mueskh">
+        <lightning:input aura:id="first" label="First name" placeholder="First name"  />
+        <lightning:input aura:id="last" label="Last name"  placeholder="Last name"  />
+        <lightning:input aura:id="phone" label="Phone" placeholder="Phone"  />
+        <lightning:input aura:id="company" label="Company"  placeholder="Company"  />
+        <lightning:select aura:id="field" label="Select Status"  onchange="{!c.onChangeHandler}">
+            <option value="">--None--</option>
+            <aura:iteration items="{!v.pickValues}" var="val">
+                <option value="{!val}"> {!val}</option>
+            </aura:iteration>
+        </lightning:select>
+        
+    </div>
+    <br/>
+    <div class="footer">
+        <lightning:button variant="brand" class="slds-float_left slds-p-around_samll"   label="Cancel"  onclick="{!c.clearClick }" />
+        <lightning:button variant="success" class="slds-float_right"  iconName="utility:save"  label="Save"  onclick="{!c.handleClick }"/>
+        
+    </div>
+    
+    
+</aura:component>

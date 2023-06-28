@@ -1,0 +1,13 @@
+<template>
+     <lightning-card title="LWC Datatable" class="slds-p-around_small">
+    <div style="height: 300px;">
+     <lightning-datatable
+             key-field="id"
+             data={data} 
+             onrowselection={rowhandleSelection}
+             columns={columns}>
+     </lightning-datatable>
+ </div>
+    <lightning-button variant="brand" label="Send To Apex" onclick={sendToApex}></lightning-button>
+</lightning-card>
+</template>

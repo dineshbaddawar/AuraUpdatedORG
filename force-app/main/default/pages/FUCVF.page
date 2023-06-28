@@ -1,0 +1,184 @@
+<apex:page applyHtmlTag="false" showHeader="false" sidebar="false" docType="html-5.0" renderAs="pdf" >
+    <html>
+        <head>
+            
+            <style type="text/css">
+                @page {
+                padding-left: 5px;    
+                padding-right: 5px;      
+                }
+                
+                th {  
+                font-weight: bold;
+                text-align: center;
+                color: black;
+                padding: 8px;
+                }
+                
+                td {    
+                font-size: 15px;
+                text-align: left;
+                padding: 8px;
+                }
+                
+                table{
+                border-collapse: collapse;
+                }
+                
+                table, th, td {
+                border: 1px solid black;
+                }
+                
+             
+                
+                .left {
+                position: fixed;
+                left: 0;
+                }
+                
+                .right {
+                position: fixed;
+                right: 0;
+                }
+                
+              
+                
+            </style>
+            <script type = "text/javascript">
+            
+            </script>
+        </head>
+        <body>
+            <div style="font-size:16px; text-align:left; wdiht:fixed; margin-top:3px !important;">
+               
+                <apex:image id="theImage" value="{!$Resource.Quizziz_logo}" width="80" height="100" alt="Description of image here"/>  <b style="margin-left:15px;font-size:22px;  !important;">FOUNDATION FOR EXCELLENCE INDIA TRUST</b>
+              
+            </div>
+            <br/>
+            
+            <div style="font-size:14px; text-align:left; wdiht:fixed;">
+                <div style="font-size:16px;text-align: center;">
+                    <b> <u >FUND UTILIZATION CERTIFICATE FY 2021-22</u></b>
+                </div>
+                <p style="text-align: justify;">This is to certify that Foundation for Excellence India Trust received a donation of INR 80,00,000/- (INR 60,00,000/-  
+                                            towards scholarships of BE students + INR 10,00,000/- towards Project Monitoring Cost + INR 5,00,000/- towards 
+                                            Mentorship program + INR 5,00,000/- towards Marketing and Communication program) from <b> BROADCOM </b>
+                                            <b>COMMUNICATIONS TECHNOLOGIES PVT LTD</b> in the year 2022-23. 
+                </p>  
+                
+                 <p style="text-align: justify;">
+                    There was a carried forward balance from FY 2021-22 of INR 2,00,000/- and interest earned on the fixed deposit
+                     during the FY 2022-23 of INR 1,60,000/-
+                 </p>
+
+                 <p style="text-align: justify;">
+                    The total available grant in the FY 2022-2023 was INR 83,60,000/- of which INR 63,50,000/- was utilized for 
+                    scholarships + INR 10,00,000/- towards project monitoring cost + INR 5,00,000/- towards Mentorship program and 
+                    INR 5,00,000/- towards Marketing and Communication program. The details as per given below:
+                 </p>
+                
+            </div>
+            
+            
+            
+            <table style="width:100%; font-family: Dialog; table-layout: fixed;">                    
+                <tr >
+                    <td style="width:30%; font-size: 12px; height:78px;"><b>Name of the Donation</b> <br/></td>
+                    <td style="width:15%; font-size: 12px;"><b>Donation carried forward from previous year &amp; Interest earned during the FY</b> <br/></td>
+                    <td style="width:15%; font-size: 12px;"><b>Expenditure Head</b> <br/></td>
+                    <td style="width:15%; font-size: 12px;"><b>Fund Utilization in 2022-23 (Rs)</b> <br/></td>
+                    <td style="width:15%; font-size: 12px;"><b>Carried over to FY 2023-24 (Rs)</b><br/></td>
+                </tr> 
+            </table>
+            
+            <table style="width:100%; table-layout: fixed;">
+                <tr>
+                    <td style="width:30%;font-size: 12px; text-align:center ">
+                        <table style="margin-top:-8.5px;margin-bottom:-8.5px; margin-right:-8.5px;margin-left:-8.5px!important;">
+
+                            <tr >
+                                <th>Donor Name – BROADCOM COMMUNICATIONS TECHNOLOGIES PVT LTD </th>
+                            </tr>
+
+                            <tr > 
+                                <td>FFE Donor ID - FFEUID015411</td>
+                            </tr>
+
+                            <tr >
+                                <td>Project Name – “Sponsoring the 
+                                    Engineering education of 159 academically 
+                                    bright and financially deserving students in
+                                     India through annual scholarship awards”.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Opening balance b/f towards scholarships</td>
+                            </tr>
+
+                            <tr >
+                                <td>Opening balance b/f towards interest on fixed deposit</td>
+                            </tr>
+
+                            <tr >
+                                <td>Interest earned on the fixed deposit during the FY 2022-23 </td>
+                            </tr>
+
+                            <tr >
+                                <td>Mentorship Program</td>
+                            </tr>
+
+                            <tr >
+                                <td>Marketing and Communication</td>
+                            </tr>
+
+                            <tr >
+                                <td >Project Monitoring Cost </td>
+                            </tr>
+                            
+                        </table>
+                    </td>
+                    
+                    <td style="width:15%;font-size: 12px; text-align:center ">one</td>
+                    <td style="width:15%;font-size: 12px; text-align:justify ">Project Name: Sponsoring the eduction of 27
+                         academically bright and finacially deserving
+                         students in India through annual scholarship
+                         awards </td>
+
+                         <td style="width:15%;font-size: 12px; text-align:center ">63,50,000.00</td>
+                    <td style="width:15%;font-size: 12px; text-align:center ">NIL</td>
+                    
+                </tr>
+                
+                
+                
+                <tr>
+                    <td style="width:30%;font-size: 12px; text-align:center; "><b>TOTAL</b></td>
+                    <td style="width:15%;font-size: 12px; text-align:center; "><b>1112,00,000.00</b></td>
+                    <td style="width:15%;font-size: 12px; text-align:center; "><b>TOTAL</b></td>
+                    <td style="width:15%;font-size: 12px; text-align:center; "><b>10,80,000.00</b></td>
+                    <td style="width:15%;font-size: 12px; text-align:center; "><b>NIL</b></td>
+                </tr>
+                
+            </table>
+            <br/>
+            
+            <p><b>I, G.S Prakash hereby certify that the information on this page is both true and accurate
+                  as per the account books of this organization.     
+          </b></p>  
+          <br/> 
+          <br/>
+
+          <p><b>SIGNATURE AND SEAL OF CHARTERED ACCOUNTANT</b></p> 
+          <P><b>UDIN:</b></P>
+
+          <p><b>SIGNATURE OF AUTHORISED SIGNATORY &amp; SEAL OF ORGANIZATION</b></p> 
+          <P><b>DATE:</b></P>
+            
+            
+            
+            
+            
+        </body>
+    </html>
+</apex:page>

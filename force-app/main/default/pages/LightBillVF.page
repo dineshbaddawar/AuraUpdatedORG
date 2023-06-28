@@ -1,0 +1,162 @@
+<apex:page renderAs="pdf"  showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" >
+    <html>
+        <head>
+            
+        </head>
+        <body>
+            <div id=":1ih" class="ii gt" jslog="20277; u014N:xr6bB; 1:WyIjdGhyZWFkLWY6MTc2NDcxNDE5NjY5NDU2MDgwOCIsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsW11d; 4:WyIjbXNnLWY6MTc2NDcxNDE5NjY5NDU2MDgwOCIsbnVsbCxbXV0."><div id=":1k0" class="a3s aiL "><u></u>
+                
+                
+                
+                
+                
+                
+                
+                <div>
+                    <div style="width:auto;padding:5px;margin-bottom:5%;margin-top:5%;margin-right:5%;margin-left:5%;border-radius:5px;background-color:white;font-family:sans-serif;font-size:14px">
+                        <table width="100%" cellpadding="5" cellspacing="0" style="margin:0 auto;text-align:center;border-collapse:collapse">
+                            <tbody><tr>
+                                <td>	
+                                    <table align="center" cellpadding="5" cellspacing="0" style="width:100%;text-align:center">
+                                        <tbody><tr>
+                                            <td align="right">
+                                                <apex:image value="{!$Resource.mseb}" width="130" height="100" alt="Description of image here"/>
+                                            </td>
+                                            <td align="left">
+                                                 <apex:image value="{!$Resource.flag}" width="130" height="100" alt="Description of image here"/>
+                                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center" style="font-size:15px;text-align:center">
+                                                    <b>Maharashtra State Electricity Distribution Co. Ltd.</b>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center" style="text-align:center">
+                                                    (A Govt. of Maharashtra undertaking)
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center" style="text-align:center">
+                                                    CIN 401009MH2005SGC153645
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" align="center" style="text-align:center">
+                                                    GSTIN 27AAECM2933K1ZB
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                </td>
+                                </tr>
+                            </tbody></table>
+                        <hr style="height:2px;border-width:0;color:#00a3cc;background-color:#00a3cc"/>
+                        <br/>
+                        
+                        <table width="100%" cellpadding="5" cellspacing="0" style="margin:0 auto;font-size:smaller;border-top:2px solid #00a3cc;border-bottom:2px solid #00a3cc;border-collapse:collapse">
+                            <tbody><tr style="background-color:#b5d1e6">
+                                
+                                
+                                
+                                <td align="center" style="color:Black;text-align:center;font-size:medium;font-weight:bold">  
+                                    Online Payment Receipt Details for Energy Bill 
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        
+                        
+                        <table width="100%" cellpadding="5" cellspacing="0" style="margin:0 auto;border-top:2px solid #00a3cc;border-bottom:2px solid #00a3cc;border-collapse:collapse">
+                            <tbody><tr>
+                                <td style="color:Black;font-size:medium">  
+                                    <span>Dear Consumer <b>  SHRI BADDAWAR GANESH NARAYAN</b>,</span>
+                                    <br/>					
+                                </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td> Thank you for using Online Payment facility for paying your MSEDCL Energy Bill.  <br/> </td>
+                                </tr>
+                                <tr>
+                                    <td>  Please use your Transaction ID for any queries/complaints related to this transaction in future. <br/><br/> </td>				
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <br/>
+                        <table width="100%" cellpadding="5" cellspacing="0" style="margin:0 auto;border-top:2px solid #00a3cc;border-bottom:2px solid #00a3cc;background-color:#b5d1e6;border-collapse:collapse">		
+                            
+                            <tbody><tr>	
+                                <td> Transaction Reference No.:		</td>
+                                <td>	HGA9P123950285128480 </td>
+                                </tr>
+                                <tr>	
+                                    <td> Payment Receip No.: 	</td>
+                                    <td>	230501000047381441 </td>
+                                </tr>
+                                <tr>	
+                                    <td> Bill Type:		</td>
+                                    <td> LT </td>
+                                </tr>
+                                <tr>	
+                                    <td> Consumer No.:		</td>
+                                    <td>	555160228280 </td>
+                                </tr>
+                                <tr>	
+                                    <td> Amount:   </td>
+                                    <td>	200/- </td>
+                                </tr>
+                                <tr>	
+                                    <td>Transaction Date &amp; Times:  </td>
+                                    <td>	5/1/2023 5:56:14 PM </td>
+                                </tr>	
+                            </tbody>
+                        </table>
+                        <br/>
+                        
+                        <table style="width:100%;margin:0 auto;border-collapse:collapse">
+                            <tbody><tr>
+                                <td align="justify">
+                                    <center><b style="font-size:15px;color:red"> Please </b>
+                                        <a href="https://wss.mahadiscom.in/wss/wss?uiActionName=getOnlinePaymentRecieptLTLink&amp;A=7pTsYmnKuhClzQIQBdeK9ZF7d9nm8qdFyZTw0z0/xV2Hx9PS3ahf49Jzqok/2lmc&amp;B=kOkJ707aVLUdl8CI3Wbj5g==" style="background-color:#eb7035;border:1px solid #eb7035;border-radius:3px;color:#ffffff;font-weight:bold;display:inline-block;font-family:sans-serif;font-size:16px;line-height:25px;text-decoration:none;width:auto;padding:0px 10px 0px 10px" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://wss.mahadiscom.in/wss/wss?uiActionName%3DgetOnlinePaymentRecieptLTLink%26A%3D7pTsYmnKuhClzQIQBdeK9ZF7d9nm8qdFyZTw0z0/xV2Hx9PS3ahf49Jzqok/2lmc%26B%3DkOkJ707aVLUdl8CI3Wbj5g%3D%3D&amp;source=gmail&amp;ust=1683049009415000&amp;usg=AOvVaw0kh7GTAbPDxW4i4tlaiYSA">
+                                            Click  
+                                        </a> 
+                                       <apex:image id="theImage" value="{!$Resource.download}" width="30" height="30" alt="Description of image here"/>
+                                        <b style="font-size:15px;color:red"> here to view / download your Energy Bill payment receipt. </b>
+                                    </center>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>			
+                        <hr style="height:2px;border-width:0;color:#00a3cc;background-color:#00a3cc"/>
+                        <br/>
+                        
+                        <table style="width:100%;margin:0 auto;border-collapse:collapse">
+                            <tbody><tr>
+                                <td align="justify" style="font-size:14px">
+                                    In case of payment related queries , please contact our Payment Helpdesk through mail :<a href="mailto:helpdesk_pg@mahadiscom.in" target="_blank"> helpdesk_pg@mahadiscom.in </a> .
+                                </td>
+                                </tr>					
+                            </tbody></table>	
+                        <br/>
+                  
+                        <table align="center" style="margin:0 auto;border-collapse:collapse">
+                            <tbody><tr>
+                                <td align="center">
+                                    We hope you enjoy receiving e-Receipt from MSEDCL.			
+                                </td>
+                                </tr>
+                            </tbody></table>
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+                </div>
+            </div>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,84 @@
+<apex:page setup="false" sidebar="false" renderAs="pdf"  showHeader="false" standardController="OpportunityLineItem" extensions="ProducDetailsVFController" applyHtmlTag="false" applyBodyTag="false">
+    <head>
+        <style>
+            @page {
+            margin-top:0.5cm;
+            background-image: url('https://utilitarianlabs7-auracompo-dev-ed--c.vf.force.com/resource/1681841578000/Watermark?');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #f2f2f2;
+            @bottom-left {
+            content: element(footer);
+            }
+            
+            }
+            div.footer {
+            display: block;
+            padding: 5px;
+            position: running(footer);
+            }
+            
+            header {
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 10;
+            right: 0;
+            height: 50px; /* adjust height as needed */
+            }
+            
+            
+            .pagenumber:before {
+            content: counter(page);
+            }
+            .pagecount:before {
+            content: counter(pages);
+            }
+            
+            .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        <div class="footer" style="margin-left: auto;margin-right: auto;">
+            <hr style="border-top: 1px solid #20B2AA;" />
+            <div class="number" Style="float:right;font-size:15px;">Page <span class="pagenumber"/> of <span class="pagecount"/></div>
+        </div>
+        <header >
+            <div>
+                <apex:image url="{!$Resource.SudeImage}"  width="120" height="60"  />
+            </div>
+            
+        </header> 
+        
+        <br/><br/>
+        <br/>
+        <div class="content" style="margin-top:10px;">
+            <div>
+                Visualforce components that produce HTML have pass-through style and styleClass attributes. These attributes allow you to use your own styles and style classes to control the look and feel of the resulting HTML. style allows you to set styles directly on a component, while styleClass lets you attach classes for styles defined elsewhere
+                <div style="page-break-after: always"/>
+            </div>
+            <br/><br/>
+            <br/>
+            <br/>
+            <div>
+                Visualforce components that produce HTML have pass-through style and styleClass attributes. These attributes allow you to use your own styles and style classes to control the look and feel of the resulting HTML. style allows you to set styles directly on a component, while styleClass lets you attach classes for styles defined elsewhere
+                <div style="page-break-after: always"/>
+            </div>
+            <br/><br/>
+            <br/>
+            <br/>
+            <div>
+                Visualforce components that produce HTML have pass-through style and styleClass attributes. These attributes allow you to use your own styles and style classes to control the look and feel of the resulting HTML. style allows you to set styles directly on a component, while styleClass lets you attach classes for styles defined elsewhere
+                <div style="page-break-after: always"/>
+            </div>
+            
+        </div>
+        
+    </body>
+</apex:page>
